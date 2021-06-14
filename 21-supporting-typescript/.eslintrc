@@ -1,17 +1,13 @@
 {
-  "parser": "babel-eslint",
+  "parser": "@typescript-eslint/parser",
   "env": {
     "browser": true,
     "node": true,
     "es6": true
   },
-  "plugins": [
-    "eslint-plugin-html",
-    "jquery"
-  ],
+  "plugins": ["eslint-plugin-html", "jquery"],
   "extends": [
-    "eslint:recommended",
-    "plugin:jquery/deprecated",
+    "plugin:@typescript-eslint/recommended",
     "plugin:prettier/recommended"
   ],
   "rules": {
@@ -23,5 +19,7 @@
     "prefer-template": "error",
     "no-var": "error",
     "prefer-const": "error",
+    "@typescript-eslint/explicit-module-boundary-types": 0,
+    "@typescript-eslint/ban-ts-comment": 0
   }
 }

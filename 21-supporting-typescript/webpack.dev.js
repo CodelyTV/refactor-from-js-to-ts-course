@@ -8,5 +8,5 @@ module.exports = merge(common, {
   target: "web",
   devServer: {
     contentBase: "./dist",
-  },
+  }
 });

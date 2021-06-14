@@ -18,6 +18,7 @@ export function createUser(form) {
   return new Promise((resolve) => {
     const newUser = Object.values(form.elements).reduce((user, element) => {
       if (element.id) {
+        // @ts-expect-error
         user[element.id] = element.value;
       }
       return user;
