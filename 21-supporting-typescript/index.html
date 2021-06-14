@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="referrer" content="no-referrer-when-downgrade" />
+  <title>Codely</title>
+  <meta name="description" content="IIFEs" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+
+<body>
+  <div>
+    <h1>Courses</h1>
+    <div>
+      <button class="js-trigger-container" rel="filters">Show filters</button>
+      <div id="filters" class="hidden">
+        <label for="category">Category:</label>
+
+        <div id="category">
+          <label><input type="checkbox" name="category" value="frontend" />Frontend</label>
+          <label><input type="checkbox" name="category" value="backend" />Backend</label>
+          <label><input type="checkbox" name="category" value="tooling" />Tooling</label>
+        </div>
+      </div>
+    </div>
+    <div id="courses" class="courses-grid">
+      <div class="course-card js-filtered-item" data-category="frontend">
+        <img class="course-card__img" alt="Vue 3: Novedades aplicadas al mundo real"
+          src="img/cursos/novedades-vue-3.jpg" />
+        <div class="course-card__info">
+          <h6 class="course-card__title">
+            <a href="https://pro.codely.tv/library/novedades-vue-3/about/?utm_source=cursos&utm_medium=landing&utm_campaign=internal&utm_content=courses-masonry"
+              target="_blank">
+              ✌️ Vue 3: Novedades aplicadas al mundo real
+            </a>
+          </h6>
+          <strong>Javi y Núria</strong>
+          <p>
+            Veremos cómo exprimir las novedades de Vue 3 con ejemplos reales y
+            aplicando buenas prácticas.
+          </p>
+        </div>
+      </div>
+      <div class="course-card js-filtered-item" data-category="tooling">
+        <img class="course-card__img" alt="Makefiles" src="img/cursos/makefiles.jpg" />
+        <div class="course-card__info">
+          <h6 class="course-card__title">
+            <a href="https://pro.codely.tv/library/makefiles/about/?utm_source=cursos&utm_medium=landing&utm_campaign=internal&utm_content=courses-masonry"
+              target="_blank">
+              🐂 Makefiles
+            </a>
+          </h6>
+          <strong>Rafa</strong>
+          <p>
+            El centralizar tareas de nuestras aplicaciones es algo muy
+            importante, y con los Makefiles se simplifica mucho.
+          </p>
+        </div>
+      </div>
+      <div class="course-card js-filtered-item" data-category="tooling">
+        <img class="course-card__img" alt="Bash para el día a día" src="img/cursos/bash.jpg" />
+        <div class="course-card__info">
+          <h6 class="course-card__title">
+            <a href="https://pro.codely.tv/library/curso-bash/about/?utm_source=cursos&utm_medium=landing&utm_campaign=internal&utm_content=courses-masonry"
+              target="_blank">
+              💻 Bash para el día a día: Scripting & Productividad
+            </a>
+          </h6>
+          <strong>Javi y Rafa</strong>
+          <p>Aprende a usar la navaja suiza de los programadores 😬</p>
+        </div>
+      </div>
+      <div class="course-card js-filtered-item" data-category="backend">
+        <img class="course-card__img" alt="DDD en Java" src="img/cursos/ddd-java.jpg" />
+        <div class="course-card__info">
+          <h6 class="course-card__title">
+            <a href="https://pro.codely.tv/library/ddd-en-java/about/?utm_source=cursos&utm_medium=landing&utm_campaign=internal&utm_content=courses-masonry"
+              target="_blank">
+              ☕ DDD en Java
+            </a>
+          </h6>
+          <strong>Javi y Rafa</strong>
+          <p>
+            Crea paso a paso tu aplicación Java siguiendo Domain-Driven
+            Design. Estructura de carpetas, integración con BD, sistema de
+            colas, CQRS y más.
+          </p>
+        </div>
+      </div>
+      <div class="course-card js-filtered-item" data-category="backend">
+        <img class="course-card__img" alt="DDD en PHP" src="img/cursos/ddd-en-php.jpg" />
+        <div class="course-card__info">
+          <h6 class="course-card__title">
+            <a href="https://pro.codely.tv/library/ddd-en-php/about/?utm_source=cursos&utm_medium=landing&utm_campaign=internal&utm_content=courses-masonry"
+              target="_blank">
+              🐘 DDD en PHP
+            </a>
+          </h6>
+          <strong>Javi y Rafa</strong>
+          <p>
+            Crea paso a paso tu aplicación PHP siguiendo Domain-Driven Design.
+            Estructura de carpetas, integración con BD, sistema de colas, CQRS
+            y más.
+          </p>
+        </div>
+      </div>
+      <div class="course-card js-filtered-item" class="tooling">
+        <img class="course-card__img" alt="Terminal 100% productiva con Zsh" src="img/cursos/terminal-zsh.jpg" />
+        <div class="course-card__info">
+          <h6 class="course-card__title">
+            <a href="https://pro.codely.tv/library/terminal-zsh/about/?utm_source=cursos&utm_medium=landing&utm_campaign=internal&utm_content=courses-masonry"
+              target="_blank">
+              💻 Terminal 100% productiva con Zsh
+            </a>
+          </h6>
+          <strong>Javi y Rafa</strong>
+          <p>
+            Consigue ser un Productivity Raptor™️ con tu terminal gracias a
+            Zsh, Oh My Zsh, Zim y funciones avanzadas.
+          </p>
+        </div>
+      </div>
+      <div class="course-card js-filtered-item" data-category="frontend">
+        <img class="course-card__img" alt="Buenas prácticas con CSS: Layouts" src="img/cursos/layouts-css.jpg" />
+        <div class="course-card__info">
+          <h6 class="course-card__title">
+            <a href="https://pro.codely.tv/library/layouts-css/about/?utm_source=cursos&utm_medium=landing&utm_campaign=internal&utm_content=courses-masonry"
+              target="_blank">
+              📐 Buenas prácticas con CSS: Layouts
+            </a>
+          </h6>
+          <strong>Núria y Rafa</strong>
+          <p>
+            Aprende a crear layouts responsive mantenibles y reutilizables con
+            CSS sin desesperarte 🧘
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div>
+    <h2>Create user</h2>
+    <form id="user_form">
+      <div class="form-field">
+        <label for="firstName">First name</label>
+        <input type="text" id="firstName" class="js-form-control" />
+      </div>
+      <div class="form-field">
+        <label for="lastName">Last name</label>
+        <input type="text" id="lastName" class="js-form-control" />
+      </div>
+      <div class="form-field">
+        <label for="email">Email</label>
+        <input type="text" id="email" class="js-form-control" />
+      </div>
+      <div class="form-field">
+        <label for="dob">Date of birth</label>
+        <input type="date" id="dob" class="datepicker-cmy js-form-control" />
+      </div>
+      <div class="form-field">
+        <label for="country">Country</label>
+        <select id="country" class="js-load-data js-form-control" data-type="countries">
+          <option value="">Select country</option>
+        </select>
+      </div>
+      <div class="form-field">
+        <label for="courseCategory">Course category preference</label>
+        <select id="courseCategory" class="js-load-data js-form-control" data-type="courseCategory">
+          <option value="">Select course category</option>
+        </select>
+      </div>
+      <div class="form-field">
+        <label for="bio">Tell us a bit about yourself</label>
+        <textarea id="bio" class="js-form-control"></textarea>
+        <div class="js-count-content">
+          <span class="js-count-chars">0</span>/200
+        </div>
+      </div>
+
+      <div id="user_form_error" class="error hidden">
+        There is an error submitting your form, please review the fields and
+        try again
+      </div>
+      <div id="network_form_error" class="error hidden">
+        There was an error submitting your form. Please try again later.
+      </div>
+      <button type="submit">Submit</button>
+    </form>
+    <div id="thanks" class="hidden">
+      <h3>Thank you!</h3>
+      <p>Please check your inbox.</p>
+    </div>
+  </div>
+</body>
+
+</html>
