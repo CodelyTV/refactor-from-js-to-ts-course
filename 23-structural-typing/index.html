@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="referrer" content="no-referrer-when-downgrade" />
+    <title>Codely</title>
+    <meta name="description" content="IIFEs" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+
+  <body>
+    <div>
+      <h2>Create user</h2>
+      <form id="user_form">
+        <div class="form-field">
+          <label for="firstName">First name</label>
+          <input
+            type="text"
+            id="firstName"
+            name="firstName"
+            class="js-form-control"
+          />
+        </div>
+        <div class="form-field">
+          <label for="lastName">Last name</label>
+          <input
+            type="text"
+            id="lastName"
+            name="lastName"
+            class="js-form-control"
+          />
+        </div>
+        <div class="form-field">
+          <label for="email">Email</label>
+          <input type="text" id="email" name="email" class="js-form-control" />
+        </div>
+        <div id="user_form_result"></div>
+        <button type="submit">Submit</button>
+      </form>
+      <div id="thanks" class="hidden">
+        <h3>Thank you!</h3>
+        <p>Please check your inbox.</p>
+      </div>
+    </div>
+  </body>
+</html>
