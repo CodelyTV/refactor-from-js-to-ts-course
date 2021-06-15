@@ -11,7 +11,7 @@ const CodelyBackoffice = {
     /**
      * Count character in selected fields
      */
-    const form_field = document.querySelector(".js-form-control");
+    const form_field = document.querySelector(".js-form-control") as any;
 
     const counter = document.querySelector(".js-count-content");
     const char_counter_container = counter.querySelector(".js-count-chars");
@@ -19,7 +19,9 @@ const CodelyBackoffice = {
     char_counter_container.innerHTML = countChars(form_field.value);
 
     form_field.addEventListener("keyup", function () {
-      char_counter_container.innerHTML = countChars(form_field.value);
+      char_counter_container.innerHTML = countChars(
+        form_field.value
+      ).toString();
     });
   },
   /*******************************************************************************************************************
@@ -27,7 +29,7 @@ const CodelyBackoffice = {
    ******************************************************************************************************************/
   initUserForm() {
     function validateBio() {
-      const field = document.getElementById("bio");
+      const field = document.getElementById("bio") as any;
       const fieldLength = field.value.length;
       const isValid = fieldLength > 0 && field.value.length <= 15;
 
