@@ -85,8 +85,8 @@ const CodelyBackoffice = {
   initCategoryFilter() {
     const filter = document.getElementById("category");
 
-    function getSelectedValues(node) {
-      const checkboxes = node.querySelectorAll(
+    function getSelectedValues(node: HTMLElement) {
+      const checkboxes = node.querySelectorAll<HTMLInputElement>(
         'input[type="checkbox"]:checked'
       );
 
