@@ -9,7 +9,7 @@ const CodelyBackoffice = {
    ******************************************************************************************************************/
   initUserForm() {
     function validateEmail() {
-      const field = document.getElementById("email") as any;
+      const field = document.getElementById("email") as HTMLInputElement;
       const isValid = new RegExp(
         "^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$"
       ).test(field.value);
