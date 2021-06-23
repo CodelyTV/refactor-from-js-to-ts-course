@@ -4,7 +4,8 @@
     "target": "ES6",
     "allowJs": true,
     "lib": ["DOM", "DOM.Iterable", "ESNext"],
-    "noImplicitAny": true
+    "noImplicitAny": true,
+    "strictNullChecks": true
   },
   "include": ["./js/**/*"]
 }

@@ -18,12 +18,11 @@ const CodelyBackoffice = {
     /**
      * Show/hide an element based on a change in another field.
      */
-    const trigger = document.querySelector(".js-trigger-container");
+    const trigger = document.querySelector(".js-trigger-container")!;
 
     trigger.addEventListener("click", function () {
-      document
-        .getElementById(trigger.getAttribute("rel"))
-        .classList.toggle("hidden");
+      const rel = trigger.getAttribute("rel")!;
+      document.getElementById(rel)!.classList.toggle("hidden");
     });
   },
   /*******************************************************************************************************************
@@ -49,20 +48,22 @@ const CodelyBackoffice = {
 
     for (let i = 0; i < contentCounters.length; ++i) {
       const counter = contentCounters[i];
-      const form_field = counter.parentElement.querySelector<HTMLInputElement>(
+      const form_field = counter.parentElement!.querySelector<HTMLInputElement>(
         ".js-form-control"
-      );
+      )!;
       const char_counter_container = counter.querySelector(".js-count-chars");
 
-      char_counter_container.innerHTML = countChars(
-        form_field.value
-      ).toString();
-
-      form_field.addEventListener("keyup", function () {
+      if (char_counter_container) {
         char_counter_container.innerHTML = countChars(
           form_field.value
         ).toString();
-      });
+
+        form_field.addEventListener("keyup", function () {
+          char_counter_container.innerHTML = countChars(
+            form_field.value
+          ).toString();
+        });
+      }
     }
 
     /**
@@ -94,7 +95,7 @@ const CodelyBackoffice = {
    * Filter courses by category
    ******************************************************************************************************************/
   initCategoryFilter() {
-    const filter = document.getElementById("category");
+    const filter = document.getElementById("category")!;
 
     function getSelectedValues(node: HTMLElement) {
       const checkboxes = node.querySelectorAll<HTMLInputElement>(
@@ -123,7 +124,7 @@ const CodelyBackoffice = {
           continue;
         }
 
-        const elementCategory = element.getAttribute("data-category");
+        const elementCategory = element.getAttribute("data-category")!;
 
         if (isInList(elementCategory, categories)) {
           show(element);
@@ -135,13 +136,17 @@ const CodelyBackoffice = {
   },
   initSearchByTitle() {
     const filter = document.getElementById("getOneByName") as HTMLInputElement;
-    const result = document.getElementById("name-search-result");
+    const result = document.getElementById("name-search-result")!;
 
     filter.addEventListener("keyup", () => {
       const course = getOneByTitle(filter.value);
 
-      show(result);
-      result.innerHTML = course.title;
+      if (course) {
+        show(result);
+        result.innerHTML = course.title;
+      } else {
+        hide(result);
+      }
     });
   },
   /*******************************************************************************************************************
@@ -194,7 +199,7 @@ const CodelyBackoffice = {
     }
 
     function isFormValid() {
-      hide(document.getElementById("user_form_error"));
+      hide(document.getElementById("user_form_error")!);
 
       const formControls = document.querySelectorAll(".js-form-control");
 
@@ -220,7 +225,7 @@ const CodelyBackoffice = {
         validateBio();
 
       if (!isValid) {
-        show(document.getElementById("user_form_error"));
+        show(document.getElementById("user_form_error")!);
       }
 
       return isValid;
@@ -244,13 +249,13 @@ const CodelyBackoffice = {
     }
 
     function handleFormError() {
-      show(document.getElementById("network_form_error"));
+      show(document.getElementById("network_form_error")!);
     }
 
     function handleFormSuccess(form: HTMLFormElement, newUser: User) {
-      const thanksBlock = document.getElementById("thanks");
-      const title = thanksBlock.querySelector("h3");
-      const content = thanksBlock.querySelector("p");
+      const thanksBlock = document.getElementById("thanks")!;
+      const title = thanksBlock.querySelector("h3")!;
+      const content = thanksBlock.querySelector("p")!;
 
       title.innerHTML = sanitize`Thank you ${newUser.firstName} for registering!`;
       content.innerHTML = sanitize`We sent a confirmation email to <strong>${newUser.email}</strong>`;
@@ -260,7 +265,7 @@ const CodelyBackoffice = {
     }
 
     document
-      .getElementById("user_form")
+      .getElementById("user_form")!
       .addEventListener("submit", async function (ev) {
         ev.preventDefault();
         const form = ev.target as HTMLFormElement;
