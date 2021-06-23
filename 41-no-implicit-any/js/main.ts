@@ -1,7 +1,8 @@
 import "../css/sakura.css";
 import "../css/custom.css";
 
-import { countChars, createUser, show, hide } from "./utils";
+import { countChars, createUser, show, hide, User } from "./utils";
+import { FetchResponse } from "./types";
 
 const CodelyBackoffice = {
   /*******************************************************************************************************************
@@ -23,7 +24,7 @@ const CodelyBackoffice = {
    * Common forms functions
    ******************************************************************************************************************/
   async initForms() {
-    function fetchData(select) {
+    function fetchData(select: Element) {
       const domain =
         document.domain == "localhost" ? "localhost:8080" : document.domain;
       const type = select.getAttribute("data-type");
@@ -32,7 +33,7 @@ const CodelyBackoffice = {
         .then((response) => response.json())
         .catch(() => {
           throw new Error(`Could not find ${type}.json`);
-        });
+        }) as Promise<FetchResponse>;
     }
 
     /**
@@ -47,10 +48,14 @@ const CodelyBackoffice = {
       );
       const char_counter_container = counter.querySelector(".js-count-chars");
 
-      char_counter_container.innerHTML = countChars(form_field.value).toString();
+      char_counter_container.innerHTML = countChars(
+        form_field.value
+      ).toString();
 
       form_field.addEventListener("keyup", function () {
-        char_counter_container.innerHTML = countChars(form_field.value).toString();
+        char_counter_container.innerHTML = countChars(
+          form_field.value
+        ).toString();
       });
     }
 
@@ -66,7 +71,7 @@ const CodelyBackoffice = {
 
     const responses = await Promise.all(requests).catch((e) => {
       console.error(e);
-      return [];
+      return [] as FetchResponse[];
     });
 
     responses.forEach(({ data }, index) => {
@@ -97,7 +102,7 @@ const CodelyBackoffice = {
       return selectedValues;
     }
 
-    function isInList(item, list) {
+    function isInList(item: string, list: string[]) {
       return list.includes(item);
     }
 
@@ -126,7 +131,7 @@ const CodelyBackoffice = {
    * Create user form
    ******************************************************************************************************************/
   initUserForm() {
-    function validateRequiredField(field) {
+    function validateRequiredField(field: HTMLInputElement) {
       const isValid = !!field.value;
 
       if (!isValid) {
@@ -181,12 +186,20 @@ const CodelyBackoffice = {
       });
 
       const isValid =
-        validateRequiredField(document.getElementById("firstName")) &&
-        validateRequiredField(document.getElementById("lastName")) &&
+        validateRequiredField(
+          document.getElementById("firstName") as HTMLInputElement
+        ) &&
+        validateRequiredField(
+          document.getElementById("lastName") as HTMLInputElement
+        ) &&
         validateEmail() &&
         validateDob() &&
-        validateRequiredField(document.getElementById("country")) &&
-        validateRequiredField(document.getElementById("courseCategory")) &&
+        validateRequiredField(
+          document.getElementById("country") as HTMLInputElement
+        ) &&
+        validateRequiredField(
+          document.getElementById("courseCategory") as HTMLInputElement
+        ) &&
         validateBio();
 
       if (!isValid) {
@@ -196,7 +209,7 @@ const CodelyBackoffice = {
       return isValid;
     }
 
-    function sanitize(strings, ...values) {
+    function sanitize(strings: TemplateStringsArray, ...values: string[]) {
       let output = "";
       // eslint-disable-next-line no-var
       for (var index = 0; index < values.length; index++) {
@@ -217,7 +230,7 @@ const CodelyBackoffice = {
       show(document.getElementById("network_form_error"));
     }
 
-    function handleFormSuccess(form, newUser) {
+    function handleFormSuccess(form: HTMLFormElement, newUser: User) {
       const thanksBlock = document.getElementById("thanks");
       const title = thanksBlock.querySelector("h3");
       const content = thanksBlock.querySelector("p");

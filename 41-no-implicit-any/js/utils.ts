@@ -15,7 +15,7 @@ interface FormElements extends HTMLFormControlsCollection {
   email: HTMLInputElement;
 }
 
-export function countWords(str) {
+export function countWords(str: string): number {
   return str.split(" ").length;
 }
 
@@ -23,11 +23,11 @@ export function countChars(str: string): number {
   return str.split("").length;
 }
 
-export function show(element) {
+export function show(element: Element) {
   element.classList.remove("hidden");
 }
 
-export function hide(element) {
+export function hide(element: Element) {
   element.classList.add("hidden");
 }
 

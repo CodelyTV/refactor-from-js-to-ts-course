@@ -3,7 +3,7 @@ const CopyPlugin = require("copy-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
-  entry: "./js/main.js",
+  entry: "./js/main.ts",
   output: {
     filename: "main.js",
     path: path.resolve(__dirname, "dist"),
