@@ -1,0 +1,43 @@
+body {
+  max-width: 95rem;
+}
+
+input, textarea, button {
+  font-family: sans-serif;
+  font-size: 1.5rem;
+}
+
+.hidden {
+  display: none;
+}
+
+.error {
+  color: tomato;
+  border-color: tomato;
+}
+
+.courses-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.course-card {
+  background: #fff;
+  box-shadow: 0 0.2rem 1rem rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s, box-shadow 0.3s;
+  font-size: .9em;
+}
+.course-card__info {
+  padding: 0 1.5rem 2rem;
+}
+.course-card__info p {
+  margin-bottom: 0;
+}
+.course-card__img {
+  display: block;
+  width: 100%;
+  margin: 0;
+}
+
