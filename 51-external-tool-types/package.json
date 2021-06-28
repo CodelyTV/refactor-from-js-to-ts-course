@@ -19,6 +19,7 @@
     "@babel/core": "^7.13.10",
     "@babel/preset-env": "^7.13.12",
     "@testing-library/cypress": "^7.0.4",
+    "@types/lodash": "^4.14.170",
     "@typescript-eslint/eslint-plugin": "^4.26.1",
     "@typescript-eslint/parser": "^4.26.1",
     "babel-eslint": "^10.1.0",
@@ -54,6 +55,7 @@
   "dependencies": {
     "axios": "^0.21.1",
     "http-server": "^0.12.3",
-    "jquery": "^3.6.0"
+    "jquery": "^3.6.0",
+    "lodash": "^4.17.21"
   }
 }

@@ -1,3 +1,5 @@
+import { find } from "lodash";
+
 export interface User {
   firstName: string;
   lastName: string;
@@ -59,6 +61,6 @@ export function getOneByTitle(title: string) {
       },
     ];
 
-    return courses.find((x) => x.title.includes(title));
+    return find(courses, (x) => x.title.includes(title));
   }
 }
