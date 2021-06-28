@@ -52,6 +52,7 @@
     "not IE 11"
   ],
   "dependencies": {
+    "axios": "^0.21.1",
     "http-server": "^0.12.3",
     "jquery": "^3.6.0"
   }

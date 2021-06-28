@@ -1,3 +1,5 @@
+import axios from "axios";
+
 import "../css/sakura.css";
 import "../css/custom.css";
 
@@ -35,11 +37,12 @@ const CodelyBackoffice = {
         document.domain == "localhost" ? "localhost:8080" : document.domain;
       const type = select.getAttribute("data-type");
 
-      return fetch(`http://${domain}/data/${type}.json`)
-        .then((response) => response.json())
+      return axios
+        .get<FetchResponse>(`http://${domain}/data/${type}.json`)
+        .then((response) => response.data)
         .catch(() => {
           throw new Error(`Could not find ${type}.json`);
-        }) as Promise<FetchResponse>;
+        });
     }
 
     /**
