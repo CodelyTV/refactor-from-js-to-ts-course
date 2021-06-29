@@ -28,6 +28,8 @@ const CodelyBackoffice = {
       const rel = trigger.getAttribute("rel")!;
       document.getElementById(rel)!.classList.toggle("hidden");
     });
+
+    Grade(document.querySelectorAll(".course-card"));
   },
   /*******************************************************************************************************************
    * Common forms functions

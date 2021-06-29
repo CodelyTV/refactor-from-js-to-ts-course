@@ -7,5 +7,5 @@
     "strict": true,
     "moduleResolution": "node"
   },
-  "include": ["./js/**/*"]
+  "include": ["./js/**/*", "./declarations/*"]
 }

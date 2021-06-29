@@ -28,9 +28,14 @@ input, textarea, button {
   box-shadow: 0 0.2rem 1rem rgba(0, 0, 0, 0.05);
   transition: transform 0.3s, box-shadow 0.3s;
   font-size: .9em;
+  padding: 1rem;
 }
 .course-card__info {
   padding: 0 1.5rem 2rem;
+  color: white;
+}
+.course-card__info a {
+  color: white;
 }
 .course-card__info p {
   margin-bottom: 0;
