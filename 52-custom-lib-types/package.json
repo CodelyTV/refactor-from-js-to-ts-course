@@ -1,0 +1,62 @@
+{
+  "name": "refactoring-legacy-js",
+  "version": "1.0.0",
+  "description": "",
+  "private": true,
+  "scripts": {
+    "dev": "webpack serve --open --config webpack.dev.js",
+    "build": "webpack --config webpack.prod.js",
+    "start": "http-server dist",
+    "lint": "eslint --ignore-path .gitignore . --ext .js,.html",
+    "lint:fix": "npm run lint -- --fix",
+    "cy:run": "cypress run",
+    "cy:open": "cypress open"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.13.10",
+    "@babel/preset-env": "^7.13.12",
+    "@testing-library/cypress": "^7.0.4",
+    "@types/lodash": "^4.14.170",
+    "@typescript-eslint/eslint-plugin": "^4.26.1",
+    "@typescript-eslint/parser": "^4.26.1",
+    "babel-eslint": "^10.1.0",
+    "babel-loader": "^8.2.2",
+    "copy-webpack-plugin": "^8.1.0",
+    "core-js": "^3.9.1",
+    "css-loader": "^5.1.3",
+    "cypress": "^6.8.0",
+    "eslint": "^7.22.0",
+    "eslint-config-prettier": "^8.1.0",
+    "eslint-plugin-cypress": "^2.11.2",
+    "eslint-plugin-html": "^6.1.2",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jquery": "^1.5.1",
+    "eslint-plugin-prettier": "^3.3.1",
+    "eslint-plugin-simple-import-sort": "^7.0.0",
+    "html-loader": "^2.1.2",
+    "html-webpack-plugin": "^5.3.1",
+    "mini-css-extract-plugin": "^1.3.9",
+    "prettier": "^2.2.1",
+    "style-loader": "^2.0.0",
+    "ts-loader": "^9.2.3",
+    "typescript": "^4.3.2",
+    "webpack": "^5.27.2",
+    "webpack-cli": "^4.5.0",
+    "webpack-dev-server": "^3.11.2",
+    "webpack-merge": "^5.7.3"
+  },
+  "browserslist": [
+    "defaults",
+    "not IE 11"
+  ],
+  "dependencies": {
+    "axios": "^0.21.1",
+    "grade-js": "^1.0.10",
+    "http-server": "^0.12.3",
+    "jquery": "^3.6.0",
+    "lodash": "^4.17.21"
+  }
+}
