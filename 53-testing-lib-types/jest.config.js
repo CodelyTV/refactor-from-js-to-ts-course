@@ -1,7 +1,7 @@
 module.exports = {
-  testMatch: ["**/tests/*.(spec|test).js"],
+  testMatch: ["**/tests/*.(spec|test).ts"],
   transform: {
-    "\\.[jt]sx?$": "babel-jest",
+    "\\.[jt]sx?$": "ts-jest",
   },
   moduleNameMapper: {
     "\\.(css|less)$": "identity-obj-proxy",
