@@ -1,0 +1,16 @@
+<div class="courses-grid">
+  <div *ngFor="let course of courses" class="course-card js-filtered-item">
+    <img class="course-card__img" alt={{course.title}}  src="assets/cursos/{{course.image}}"/>
+    <div class="course-card__info">
+      <h6 class="course-card__title">
+        <a href={course.link} rel="noreferrer" target="_blank">
+          {{course.title}}
+        </a>
+      </h6>
+      <strong>{{course.teachers}}</strong>
+      <p>
+        {{course.description}}
+      </p>
+    </div>
+  </div>
+</div>
