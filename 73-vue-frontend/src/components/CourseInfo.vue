@@ -16,7 +16,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, PropType } from "vue";
+import { computed, defineComponent, PropType } from "vue";
 import { Course } from "@/types";
 import CourseImage from "@/components/CourseImage.vue";
 
@@ -31,12 +31,16 @@ export default defineComponent({
       required: true,
     },
   },
-  computed: {
-    description(): string {
-      return this.course.description.length > 70
-        ? this.course.description.substr(0, 70) + "…"
-        : this.course.description;
-    },
+  setup(props) {
+    const description = computed(() =>
+      props.course.description.length > 70
+        ? props.course.description.substr(0, 70) + "…"
+        : props.course.description
+    );
+
+    return {
+      description,
+    };
   },
 });
 </script>
