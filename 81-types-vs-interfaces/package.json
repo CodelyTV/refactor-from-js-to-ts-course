@@ -1,0 +1,19 @@
+{
+  "name": "refactoring-legacy-js",
+  "version": "1.0.0",
+  "description": "",
+  "private": true,
+  "scripts": {
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+  },
+  "browserslist": [
+    "defaults",
+    "not IE 11"
+  ],
+  "dependencies": {
+  }
+}
